@@ -32,3 +32,14 @@ Notes and Questions :
     - The application is currently running on a single server or container.
     - Proper access controls and security measures are in place to protect sensitive data.
     - The system may require further optimization and enhancements to meet specific production requirements.
+
+Other Improvements If I had more time :
+
+
+Data Validation and Error Handling: Checking all expected fields are present in the JSON message received from SQS, and handle any missing or incorrect data appropriately.
+
+Logging and Monitoring: implementing logging and monitoring solutions to track application performance, identify potential issues, and gather insights for debugging and optimization.
+
+Scalability : need to think about this more . 
+
+Unit Testing and regression testing : Add unit tests . Maybe Automate it as well .
