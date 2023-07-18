@@ -1,0 +1,34 @@
+Notes and Questions :
+
+1. Change the version number column type to varchar(max) in the `user_logins` table to store longer version numbers.
+
+2. For a non-real-time streaming pipeline, we can leverage technologies like Spark (local, Databricks, or AWS Glue) to run nightly or early morning batch jobs to clean, prepare, transform, and load the data into the database.
+
+3. Instead of deleting messages immediately, we can consider moving them to long-term storage or writing them to encrypted files with a retention period of at least 3 months to comply with data retention policies.
+
+4. To handle PII data masking, we can utilize hashing algorithms like SHA-256 or MD5 to mask the sensitive fields (device_id and ip). This will help preserve data uniqueness while hiding original values. Additionally, we can explore kprivacy for data obfuscation.
+
+5. For connecting and writing to Postgres, we can use the `psycopg2` library in Python. It allows us to connect to the database, create a cursor to execute SQL queries, and insert the masked user login data into the `user_logins` table.
+
+6. To deploy the application in production:
+   - Choose an appropriate infrastructure (VMs, containers, or serverless) based on scalability and performance requirements.
+   - Implement load balancing to ensure high availability and reliability.
+   - Enable robust monitoring and logging for performance analysis and issue detection.
+   - Prioritize data security by encrypting data in transit and at rest, and managing access controls effectively.
+   - Consider utilizing managed database services for easier scaling, replication, and backups.
+
+7. Additional production-ready components to consider:
+   - Implement automated testing and continuous integration to ensure code quality and stability.
+   - Use caching mechanisms to reduce database load and enhance application performance.
+   - Implement data replication and backup strategies for disaster recovery.
+
+8. Scalability with a growing dataset can be achieved by:
+   - Adopting horizontal scaling through sharding or partitioning techniques.
+   - Leveraging NoSQL databases with automatic scaling capabilities.
+
+9. PII data recovery can be achieved using a secure key management system. Authorized personnel with the appropriate access can use these keys to revert data back to its original form when required.
+
+10. Assumptions made:
+    - The application is currently running on a single server or container.
+    - Proper access controls and security measures are in place to protect sensitive data.
+    - The system may require further optimization and enhancements to meet specific production requirements.
