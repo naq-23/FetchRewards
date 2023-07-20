@@ -37,7 +37,9 @@ This will create a local environment with AWS services and a PostgreSQL database
 
 python FetchRewards.py
 
+You might have to schedule the script to run once every few hours . so the way I ran it is I put a for loop and ran it 200 times . I could use a while loop but I dont like to use while loops so I had 
 
+for i in {1..200} python FetchRewards.py ; echo "Message number $i" done; 
 
 The script will read user login data from the SQS Queue, mask sensitive information like IP addresses and device IDs, and store the masked data into the PostgreSQL database.
 
