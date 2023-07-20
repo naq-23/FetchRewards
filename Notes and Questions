@@ -26,7 +26,8 @@ Notes and Questions :
    - Adopting horizontal scaling through sharding or partitioning techniques.
    - Leveraging NoSQL databases with automatic scaling capabilities.
 
-9. PII data recovery can be achieved using a secure key management system. Authorized personnel with the appropriate access can use these keys to revert data back to its original form when required.
+9. PII data recovery can be achieved using a secure key management system. Authorized personnel with the appropriate access can use these keys to revert data back 
+   to its original form when required.
 
 10. Assumptions made:
     - The application is currently running on a single server or container.
