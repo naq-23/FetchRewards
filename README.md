@@ -24,7 +24,7 @@ Before running the ETL process, make sure you have the following installed:
 2. Navigate to the directory where you cloned the repository.
 3. Run the following command to start the local environment:
 
-        docker-compose up 
+         docker-compose up 
 
 
 4. make sure the docker compose yaml file is correct .
@@ -39,7 +39,7 @@ This will create a local environment with AWS services and a PostgreSQL database
 
 You might have to schedule the script to run once every few hours . so the way I ran it is I put a for loop and ran it 200 times . I could use a while loop but I dont like to use while loops so I had 
 
-      for i in {1..200} ; do python FetchRewards.py ; echo "Message number $i" done; 
+          for i in {1..200} ; do python FetchRewards.py ; echo "Message number $i" done; 
 
 The script will read user login data from the SQS Queue, mask sensitive information like IP addresses and device IDs, and store the masked data into the PostgreSQL database.
 
